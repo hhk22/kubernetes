@@ -3,20 +3,21 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: blue-replicaset
+  name: myapp
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: blue-app
+      app: my-app
   template:
     metadata:
       labels:
-        app: blue-app
+        app: my-app
+        tier: backend
     spec:
       containers:
         - name: blue-app
-          image: yoonjeong/blue-app:1.0
+          image: yoonjeong/my-app:1.0
           ports:
           - containerPort: 8080
           env:
