@@ -1,8 +1,3 @@
-
-```
-# service.yaml
-
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -12,7 +7,7 @@ metadata:
         service: order
         project: snackbar
 spec:
-    type: NodePort
+    type: LoadBalancer
     selector:
         service: order
         project: snackbar
@@ -35,7 +30,8 @@ spec:
     selector:
         service: payment
         project: snackbar
-    - ports:
+    ports:
+    - port: 80
       targetPort: 8080
 
 
@@ -105,13 +101,3 @@ spec:
                     limits:
                         memory: "64Mi"
                         cpu: "50m"
-
-```
-
-확인
-
-> kubectl get svc -l project=snackbar -n snackbar -o wide  
-> gcloud compute firewall-rules create order --allow tcp:30612  
-> kubectl get node -o wide  
-> export ORDER=node_ip:30612  
-> curl $ORDER/menus
