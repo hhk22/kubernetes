@@ -1,4 +1,6 @@
 
+
+
 ```
 kubectl apply -f ./ingress
 kubectl get all -n snackbar
