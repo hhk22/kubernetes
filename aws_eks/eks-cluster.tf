@@ -16,6 +16,4 @@ resource "aws_eks_cluster" "test-eks-cluster" {
     subnet_ids         = ["subnet-02784bcb3e173a4d6","subnet-09a03515a300c2fe0"]
     endpoint_public_access = true
   }
-
-
 }
