@@ -1,0 +1,272 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.2",
+  "serial": 5,
+  "lineage": "9bfd4a30-5704-1847-fe6f-880f05b1e522",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_availability_zones",
+      "name": "available",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "all_availability_zones": null,
+            "exclude_names": [
+              "ap-northeast-2a",
+              "ap-northeast-2c"
+            ],
+            "exclude_zone_ids": null,
+            "filter": null,
+            "group_names": [
+              "ap-northeast-2"
+            ],
+            "id": "ap-northeast-2",
+            "names": [
+              "ap-northeast-2b",
+              "ap-northeast-2d"
+            ],
+            "state": null,
+            "timeouts": null,
+            "zone_ids": [
+              "apne2-az2",
+              "apne2-az4"
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_autoscaling_group",
+      "name": "tfer--eks-test-eks-nodegroup-a4c49d63-ccfd-2446-e803-0eef1f8a51a1",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes_flat": {
+            "arn": "arn:aws:autoscaling:ap-northeast-2:956675039632:autoScalingGroup:d47fc16c-b157-40ef-bc87-c1419533ad41:autoScalingGroupName/eks-test-eks-nodegroup-a4c49d63-ccfd-2446-e803-0eef1f8a51a1",
+            "availability_zones.#": "2",
+            "availability_zones.0": "ap-northeast-2a",
+            "availability_zones.1": "ap-northeast-2c",
+            "capacity_rebalance": "true",
+            "context": "",
+            "default_cooldown": "300",
+            "default_instance_warmup": "0",
+            "desired_capacity": "2",
+            "desired_capacity_type": "",
+            "enabled_metrics.#": "0",
+            "force_delete": "false",
+            "health_check_grace_period": "15",
+            "health_check_type": "EC2",
+            "id": "eks-test-eks-nodegroup-a4c49d63-ccfd-2446-e803-0eef1f8a51a1",
+            "launch_configuration": "",
+            "launch_template.#": "0",
+            "load_balancers.#": "0",
+            "max_instance_lifetime": "0",
+            "max_size": "3",
+            "metrics_granularity": "1Minute",
+            "min_size": "1",
+            "mixed_instances_policy.#": "1",
+            "mixed_instances_policy.0.instances_distribution.#": "1",
+            "mixed_instances_policy.0.instances_distribution.0.on_demand_allocation_strategy": "prioritized",
+            "mixed_instances_policy.0.instances_distribution.0.on_demand_base_capacity": "0",
+            "mixed_instances_policy.0.instances_distribution.0.on_demand_percentage_above_base_capacity": "100",
+            "mixed_instances_policy.0.instances_distribution.0.spot_allocation_strategy": "lowest-price",
+            "mixed_instances_policy.0.instances_distribution.0.spot_instance_pools": "2",
+            "mixed_instances_policy.0.instances_distribution.0.spot_max_price": "",
+            "mixed_instances_policy.0.launch_template.#": "1",
+            "mixed_instances_policy.0.launch_template.0.launch_template_specification.#": "1",
+            "mixed_instances_policy.0.launch_template.0.launch_template_specification.0.launch_template_id": "lt-0df08bf3e9d2d724e",
+            "mixed_instances_policy.0.launch_template.0.launch_template_specification.0.launch_template_name": "eks-a4c49d63-ccfd-2446-e803-0eef1f8a51a1",
+            "mixed_instances_policy.0.launch_template.0.launch_template_specification.0.version": "1",
+            "mixed_instances_policy.0.launch_template.0.override.#": "1",
+            "mixed_instances_policy.0.launch_template.0.override.0.instance_requirements.#": "0",
+            "mixed_instances_policy.0.launch_template.0.override.0.instance_type": "t3a.medium",
+            "mixed_instances_policy.0.launch_template.0.override.0.launch_template_specification.#": "0",
+            "mixed_instances_policy.0.launch_template.0.override.0.weighted_capacity": "",
+            "name": "eks-test-eks-nodegroup-a4c49d63-ccfd-2446-e803-0eef1f8a51a1",
+            "name_prefix": "",
+            "placement_group": "",
+            "predicted_capacity": "0",
+            "protect_from_scale_in": "false",
+            "service_linked_role_arn": "arn:aws:iam::956675039632:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+            "suspended_processes.#": "0",
+            "tag.#": "5",
+            "tag.0.key": "eks:cluster-name",
+            "tag.0.propagate_at_launch": "true",
+            "tag.0.value": "test-eks-cluster",
+            "tag.1.key": "eks:nodegroup-name",
+            "tag.1.propagate_at_launch": "true",
+            "tag.1.value": "test-eks-nodegroup",
+            "tag.2.key": "k8s.io/cluster-autoscaler/enabled",
+            "tag.2.propagate_at_launch": "true",
+            "tag.2.value": "true",
+            "tag.3.key": "k8s.io/cluster-autoscaler/test-eks-cluster",
+            "tag.3.propagate_at_launch": "true",
+            "tag.3.value": "owned",
+            "tag.4.key": "kubernetes.io/cluster/test-eks-cluster",
+            "tag.4.propagate_at_launch": "true",
+            "tag.4.value": "owned",
+            "target_group_arns.#": "0",
+            "termination_policies.#": "3",
+            "termination_policies.0": "AllocationStrategy",
+            "termination_policies.1": "OldestLaunchTemplate",
+            "termination_policies.2": "OldestInstance",
+            "traffic_source.#": "0",
+            "vpc_zone_identifier.#": "2",
+            "vpc_zone_identifier.0": "subnet-02784bcb3e173a4d6",
+            "vpc_zone_identifier.1": "subnet-09a03515a300c2fe0",
+            "wait_for_capacity_timeout": "10m",
+            "warm_pool.#": "0",
+            "warm_pool_size": "0"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_dynamodb_table",
+      "name": "test-ddb-tf-lock",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:dynamodb:ap-northeast-2:956675039632:table/test-ddb-tf-lock",
+            "attribute": [
+              {
+                "name": "LockID",
+                "type": "S"
+              }
+            ],
+            "billing_mode": "PAY_PER_REQUEST",
+            "deletion_protection_enabled": false,
+            "global_secondary_index": [],
+            "hash_key": "LockID",
+            "id": "test-ddb-tf-lock",
+            "local_secondary_index": [],
+            "name": "test-ddb-tf-lock",
+            "point_in_time_recovery": [
+              {
+                "enabled": false
+              }
+            ],
+            "range_key": null,
+            "read_capacity": 0,
+            "replica": [],
+            "restore_date_time": null,
+            "restore_source_name": null,
+            "restore_to_latest_time": null,
+            "server_side_encryption": [],
+            "stream_arn": "",
+            "stream_enabled": false,
+            "stream_label": "",
+            "stream_view_type": "",
+            "table_class": "STANDARD",
+            "tags": {
+              "Name": "test-ddb-tf-lock"
+            },
+            "tags_all": {
+              "Name": "test-ddb-tf-lock"
+            },
+            "timeouts": null,
+            "ttl": [
+              {
+                "attribute_name": "",
+                "enabled": false
+              }
+            ],
+            "write_capacity": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_s3_bucket.tt-s3-tf-state"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "tt-s3-tf-state",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::tt-s3-tf-state",
+            "bucket": "tt-s3-tf-state",
+            "bucket_domain_name": "tt-s3-tf-state.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "tt-s3-tf-state.s3.ap-northeast-2.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [
+              {
+                "id": "8d487edaee23401820b059d80f11bc04f559941aaa0602ed6ea393bd30daaf7f",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z3W03O7B5YMIYP",
+            "id": "tt-s3-tf-state",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "ap-northeast-2",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "Name": "tt-s3-tf-state"
+            },
+            "tags_all": {
+              "Name": "tt-s3-tf-state"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

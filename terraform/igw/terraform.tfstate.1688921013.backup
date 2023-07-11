@@ -1,0 +1,35 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.2",
+  "serial": 1,
+  "lineage": "334da6b6-f209-af9e-e5a2-3316233b963b",
+  "outputs": {
+    "aws_internet_gateway_tfer--igw-07b8beba6e51bc121_id": {
+      "value": "igw-07b8beba6e51bc121",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "tfer--igw-07b8beba6e51bc121",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes_flat": {
+            "arn": "arn:aws:ec2:ap-northeast-2:956675039632:internet-gateway/igw-07b8beba6e51bc121",
+            "id": "igw-07b8beba6e51bc121",
+            "owner_id": "956675039632",
+            "tags.%": "0",
+            "tags_all.%": "0",
+            "vpc_id": "vpc-0d005e84f2bb96266"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
