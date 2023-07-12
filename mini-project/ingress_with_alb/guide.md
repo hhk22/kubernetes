@@ -122,6 +122,7 @@
     - 배포
         > kubectl create -f test-deployment-game.yaml
 - eks ctl 설치
+- reference : https://catalog.us-east-1.prod.workshops.aws/workshops/9c0aa9ab-90a9-44a6-abe1-8dff360ae428/ko-KR/60-ingress-controller/100-launch-alb
 - aws alb
     - alb용 iam policy 생성
         ```
@@ -146,3 +147,42 @@
     --override-existing-serviceaccounts \
     --approve
     ```
+
+- aws alb controller 
+    - cert manager
+        > kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.4/cert-manager.yaml 
+        > kubectl get pods --namespace cert-manager
+    - alb controller
+       ```
+       wget https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/download/v2.4.4/v2_4_4_full.yaml
+       spec.containers.args.cluster-name 을 자신의 cluster-name으로 수정. 
+
+       kubectl apply -f alb-controller.yaml
+       kubectl get pods -n kube-system
+
+       ``` 
+
+- ingress
+    - yaml (ingress.yaml)
+        ```
+        apiVersion: networking.k8s.io/v1beta1
+        kind: Ingress
+        metadata:
+        name: ingress-2048
+        namespace: test-ingress-alb
+        annotations:
+            kubernetes.io/ingress.class: alb
+            alb.ingress.kubernetes.io/scheme: internet-facing
+            alb.ingress.kubernetes.io/target-type: ip
+            alb.ingress.kubernetes.io/subnets: <Public Subnet1 ID>, <Public Subnet2 ID>
+        spec:
+        rules:
+            - http:
+                paths:
+                - path: /*
+                    backend:
+                    serviceName: service-2048
+                    servicePort: 80
+        ```
+
+        kubectl create -f ingress.yaml 
