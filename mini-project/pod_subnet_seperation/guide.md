@@ -9,6 +9,8 @@
 
 ```
 
+ref:  https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/cni-custom-network.html
+
 #subnet.tf
 
 ...
@@ -168,6 +170,7 @@ kubectl set env daemonset aws-node -n kube-system AWS_VPC_K8s_CNI_CUSTOM_NETWORK
 kubectl set env daemonset aws-node -n kube-system ENI_CONFIG_LABEL_DEF=failure-domain.beta.kubernetes.io/zone
 
 kubectl rollout restart ds fluentd-elasticsearch
+>> second cidr 적용 안됨. 
 
 ```
 
