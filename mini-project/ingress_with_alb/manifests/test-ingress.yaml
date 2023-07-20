@@ -7,14 +7,38 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: <Public Subnet1 ID>, <Public Subnet2 ID>
+    alb.ingress.kubernetes.io/subnets: subnet-03d7b79715a4d96fe, subnet-0cb094400171e3934
 spec:
   rules:
     - http:
         paths:
           - path: /
-            pathType: Prefix 
+            pathType: Prefix
             backend:
+              service:
+                 name: service-2048
+                 port:
+                   number: 80
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: game-2048
+  name: ingress-2048
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
               name: service-2048
-              port: 
-               number: 80
+              port:
+                number: 80
+
+~                                     
