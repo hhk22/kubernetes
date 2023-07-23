@@ -2,10 +2,9 @@ terraform {
   required_version = ">= 1.0"
 
   backend "s3" {
-    bucket = "<Terraform Backend용 S3 Bucket명>"
+    bucket = "tt-s3-tf-state"
     key = "terraform.tfstate"
     region = "ap-northeast-2"
-    dynamodb_table = "<Terraform Backend용 DynamoDB Table명>"
     encrypt = "true"
   }
 }
