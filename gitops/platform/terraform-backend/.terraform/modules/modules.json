@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"terraform-backend","Source":"git::ssh://git@github.com/hhk22/kubernetes.git//gitops_remote_repo/terraform-backend?ref=master","Dir":".terraform/modules/terraform-backend/gitops_remote_repo/terraform-backend"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."}]}
