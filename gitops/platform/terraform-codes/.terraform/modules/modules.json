@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"terraform-codes","Source":"git::ssh://git@github.com/hhk22/ml-cicd.git//gitops_remote_repo/platform/terraform-codes?ref=master","Dir":".terraform/modules/terraform-codes/gitops_remote_repo/platform/terraform-codes"}]}
