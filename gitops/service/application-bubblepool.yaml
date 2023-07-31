@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bubble-pool
+  namespace: argocd
+spec:
+  destination:
+    namespace: bubblepool
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: gitops_remote_repo/service/bubblepool
+    repoURL: git@github.com:hhk22/ml-cicd.git
+    ref: master
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
