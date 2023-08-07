@@ -10,7 +10,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 
 // 패스워드 확인방법  
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+kubectl -n  get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
 ```
 
@@ -28,4 +28,12 @@ sudo mv ./kubectl-argo-rollouts-windows-amd64 /usr/local/bin/kubectl-argo-rollou
 
 kubectl argo rollouts dashboard &
 
+```
+
+
+```
+// 배포된 후. 
+kubectl argo rollouts list rollout -n bubblepool
+kubectl argo rollouts status bubble-pool -n bubblepool
+kubectl argo rollouts get rollout bubble-pool -n bubblepool
 ```
